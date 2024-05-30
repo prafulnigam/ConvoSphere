@@ -26,8 +26,12 @@ function App() {
           <Route exact path="/dashboard">
             <Dashboard />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Redirect to="/dashboard" />
+          </Route>
+          {/* Catch-all route to redirect to /login */}
+          <Route path="*">
+            <Redirect to="/login" />
           </Route>
         </Switch>
       </Router>
